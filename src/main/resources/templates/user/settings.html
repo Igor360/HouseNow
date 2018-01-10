@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/user">
+<head>
+<title>Головна</title>
+</head>
+<body>
+<section  layout:fragment="content">
+
+
+
+   <div class="column col-sm-11 col-xs-11" id="main">
+        
+              <div class="panel panel-default">
+                <div class="panel-heading" style = "background-color: #3bea62;"></div>
+                <div class="panel-body">
+        
+        
+                
+            <div class = "row">
+             <div class = "col-md-1" >
+               <a class = "btn-previous" href = "/user/home/"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+            </div>
+            <div class = "col-md-11" > <h3 class = "unit-name"><i aria-hidden="true" class="fa fa-cogs"></i>Настройки</h3></div>
+            </div>
+
+            <form autocomplete="off" action="#" th:action="@{/user/settings}" th:object="${user}" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Логін</label>
+
+                            <div class="col-md-8">
+                            <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+								class="validation-message"></label>
+							<input type="text" th:field="*{username}" th:placeholder="${authUser.username}"
+								class="form-control" /> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                            <div class="col-md-8">
+                              <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+								class="validation-message"></label>
+							<input type="email" th:field="*{email}" th:placeholder="${authUser.email}"
+								class="form-control" /> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-md-4 control-label">Пароль</label>
+                            <div class="col-md-8">
+                               <input type="password" th:field="*{password}"
+								placeholder="Пароль" class="form-control" /> <label
+								th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+								class="validation-message"></label>
+                            </div>
+                        </div>
+                        
+                        
+                         <div class="form-group">
+                            <label for="firstName" class="col-md-4 control-label">Ім'я</label>
+                            <div class="col-md-8">
+                               <input type="text" th:field="*{firstName}"
+								th:placeholder="${authUser.firstName}" class="form-control" /> <label
+								th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+								class="validation-message"></label>
+                            </div>
+                        </div>
+	
+						
+                         <div class="form-group">
+                            <label for="lastName" class="col-md-4 control-label">Прізвище</label>
+                            <div class="col-md-8">
+                               <input type="text" th:field="*{lastName}"
+								th:placeholder="${authUser.lastName}" class="form-control" /> <label
+								th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+								class="validation-message"></label>
+                            </div>
+                        </div>
+										<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                       
+						<button type="submit" class="btn btn-lg btn-success btn-block">Зберегти</button>
+						<div style = "text-align: center;">
+						<span th:utext="${message}"></span>	
+                    	</div>
+                    </form>
+        
+     
+        
+         
+         
+         
+         
+         
+      </div>
+    </div>
+</div>
+</section>
+</body>
+</html>

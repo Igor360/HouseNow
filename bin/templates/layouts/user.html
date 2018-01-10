@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "ua" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"	
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+  <!-- meta tags -->
+  <meta character = "utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="House safe site">
+  <meta name="author" content="Davidencko Igor">
+    <!-- CSRF Token -->
+  <meta name="csrf-token" content="">
+   <!-- css -->
+  <link rel="stylesheet" href="/resources/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/resources/static/css/style.css">
+  <link rel="stylesheet" href="/resources/static/css/admin.css">
+  <link rel="stylesheet" href="/resources/static/css/animate.css">
+  <link rel="stylesheet" href="/resources/static/bower_components/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Russo+One&amp;subset=cyrillic" rel="stylesheet">
+    <title layout:title-pattern="$CONTENT_TITLE - HouseNow">HouseNow</title>
+  <link rel="icon" href="/favicon.ico"> 
+</head>
+ <body>
+ <!-- navigation page -->
+
+
+<div th:replace="fragments/header_users :: header"></div>
+ <!-- end navigation -->
+
+<div class="wrapper">
+    <div class="row row-offcanvas row-offcanvas-left active">
+        <!-- sidebar -->
+        <div th:replace="fragments/sidebar :: sidebar"></div>
+        <!-- /sidebar -->
+
+        <!-- main right col -->
+      	<div layout:fragment = "content"></div>
+      	
+      	
+      	
+     </div>
+   </div>
+
+
+    <div class="scroll-up" style="display: none;">
+      <a href="#home"><i class="fa fa-angle-up"></i></a>
+    </div>
+    
+    
+	<script src="/resources/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/resources/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+                $('[data-toggle=offcanvas]').click(function() {
+                 $('.row-offcanvas').toggleClass('active');
+                $('.collapse').toggleClass('in').toggleClass('hidden-xs').toggleClass('visible-xs');
+        });
+        </script>
+        
+      	
+	<th:block layout:fragment="scripts">
+   </th:block>
+ </body>
+</html>
+ 

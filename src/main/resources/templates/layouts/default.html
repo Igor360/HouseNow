@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang = "ua" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"	
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+  <!-- meta tags -->
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="House safe site">
+  <meta name="author" content="Davidencko Igor">
+    <!-- CSRF Token -->
+  <meta name="csrf-token" content="">
+   <!-- css -->
+  <link rel="stylesheet" href="resources/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/static/css/style.css">
+  <link rel="stylesheet" href="resources/static/css/animate.css">
+  <link rel="stylesheet" href="resources/static/bower_components/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Russo+One&amp;subset=cyrillic" rel="stylesheet">
+ 
+    <title layout:title-pattern="$CONTENT_TITLE - HouseNow">HouseNow</title>
+  
+  <link rel="icon" href="favicon.ico"> 
+</head>
+ <body id = "home">
+ <!-- navigation page -->
+     <div th:replace="fragments/header :: header"></div>
+    <!-- Services start -->
+	<div layout:fragment = "content"></div>
+    <!-- Services end -->
+ 	
+
+
+    <div class="scroll-up" style="display: none;">
+      <a href="#home"><i class="fa fa-angle-up"></i></a>
+    </div>
+    
+    
+   
+	<div th:replace="fragments/footer :: footer"></div>
+     
+  
+	<script src="resources/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="resources/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+	<script>
+    $(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.scroll-up').fadeIn();
+		} else {
+			$('.scroll-up').fadeOut();
+		}
+	});
+	</script>
+	
+	<th:block layout:fragment="scripts">
+   </th:block>
+ </body>
+</html>

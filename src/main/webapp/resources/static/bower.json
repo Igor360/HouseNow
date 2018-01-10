@@ -1,0 +1,33 @@
+{
+  "name": "HomeOne",
+  "description": "course project written by Davidenko Igor",
+  "main": "",
+  "authors": [
+    "Davidenko Igor"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components", 
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+        "jquery": "latest",
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "html5shiv": "latest",
+        "respond": "latest",
+        "modernizr": "latest",
+        "angular": "latest",
+        "angular-route": "latest",
+  	 	"angular-resource": "latest",
+    	"angular-sanitize": "latest",
+  		"angular-animate": "latest",
+   		"angular-spinkit": "latest",
+    	"angular-http-auth": "latest",
+    	"bootbox":"latest"
+    }
+}

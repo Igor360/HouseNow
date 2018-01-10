@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ 	  layout:decorator="layouts/default">
+<head>
+<title>Помилка</title>
+</head>
+<body>
+<div  layout:fragment="content">
+ <section class="container">
+  <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <div class = "text-center">
+                     <img src="resources/static/img/smile.png"   alt = "logo site" height = "400px">
+                  	<h3 class = "title">${errorMsg}</h3>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+</div>
+</body>
+</html>
+
+
+
+

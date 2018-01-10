@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/user">
+<head>
+<title>Головна</title>
+</head>
+<body>
+<section  layout:fragment="content">
+
+
+
+   <div class="column col-sm-11 col-xs-11" id="main">
+        
+              <div class="panel panel-default">
+                <div class="panel-heading" style = "background-color: #3bea62;"></div>
+                <div class="panel-body">
+        
+        
+                
+            <div class = "row">
+             <div class = "col-md-1" >
+               <a class = "btn-previous" href = "/user/home/"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+            </div>
+            <div class = "col-md-11" > <h3 class = "unit-name">Додавання нового будинку</h3></div>
+            </div>
+            
+            <form autocomplete="off" action="#" th:action="@{/user/houses/add}" th:object="${house}" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+    						<label for="name" class="col-md-4 control-label">Назва</label>
+    	
+                            <div class="col-md-8">
+                            <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								class="validation-message"></label>
+							<input type="text" th:field="*{name}" placeholder="Назва будинку"
+								class="form-control" required/> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address" class="col-md-4 control-label">Адреса будинку</label>
+
+                            <div class="col-md-8">
+                              <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}"
+								class="validation-message"></label>
+							<input type="text" th:field="*{address}" placeholder="Введіть аддресу будинку"
+								class="form-control"  required/> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type" class="col-md-4 control-label">Тип будинку</label>
+                            <div class="col-md-8">
+                               <select name="houseType" required>
+								<th:block th:each = "type : ${typesHouse}">
+									<option th:text = "${type.name}" th:value = "${type.id}"></option>
+								</th:block>
+								</select>
+								 <label
+								th:if="${#fields.hasErrors('type')}" th:errors="*{type}"
+								class="validation-message"></label>
+                            </div>
+                        </div>
+                        
+						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                       	
+                       <div style = "text-align: right;">
+                       		<button type="submit" class="btn btn-lg  btn-success">Додати <i class="fa fa-arrow-right" aria-hidden="true"></i>		</button>
+						</div>
+						<div style = "text-align: center;">
+						<span th:utext="${message}"></span>	
+                    	</div>
+                    </form>
+        
+     
+        
+         
+         
+         
+         
+         
+      </div>
+    </div>
+</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/user">
+<head>
+<title>Адмінка</title>
+</head>
+<body>
+<section  layout:fragment="content">
+
+
+
+   <div class="column col-sm-11 col-xs-11" id="main">
+        
+              <div class="panel panel-default">
+                <div class="panel-heading" style = "background-color: #3bea62;"></div>
+                <div class="panel-body">
+        
+        
+            <h3 class = "unit-name">Мої будинки</h3>
+        <th:block th:if = "${houses.size() ==  0}">
+        	<h3>У вас нема будинків, або ви не додали жодного будинку</h3>
+        	<p>Ви можете додати новий будинок натиснувши кнопку додати</p>
+        </th:block>	
+        
+        <th:block th:each = "house : ${houses}">
+        
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+            <img src = "/resources/static/img/icons/house_1.svg" width = "180px" />
+         	    <p class = "name-house">Назва : <span th:text = "${house.name}"></span></p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a th:href="@{/user/house/info(house = ${house.id}) }" class="small-box-footer">Більше інформаціїї	 <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        
+        
+        </th:block>
+           <div style = "text-align:right;">
+          		<a  href = "/user/houses/add" class = "btn btn-default"><i class="fa fa-plus-circle" aria-hidden="true"></i> Додати</a>
+           </div>
+      </div>
+    </div>
+</div>
+</section>
+</body>
+</html>
