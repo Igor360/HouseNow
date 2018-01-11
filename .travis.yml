@@ -20,7 +20,7 @@ before_script:
     - unzip gradle-4.5-rc-1-bin.zip
     - export GRADLE_HOME=$PWD/gradle-4.5-rc-1
     - export PATH=$GRADLE_HOME/bin:$PATH
-    - cp config/database.yml.travis config/database.yml
+    - mkdir config && cp database.yml.travis config/database.yml
     - psql -c "CREATE DATABASE HouseNow;" -U postgres
 
 script:
