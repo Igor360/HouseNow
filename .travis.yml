@@ -6,9 +6,8 @@ install: /bin/true
 jdk:
 - oraclejdk8
 
-test:
-  adapter: postgresql
-  database: HouseNow
+services:
+  - postgresql
 
 before_install:
 - gradle wrapper
