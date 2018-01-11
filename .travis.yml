@@ -6,6 +6,10 @@ install: /bin/true
 jdk:
 - oraclejdk8
 
+test:
+  adapter: postgresql
+  database: HouseNow
+
 before_install:
 - gradle wrapper
 - sudo apt-get install jq
