@@ -24,6 +24,8 @@ before_script:
     - mkdir config && cp database.yml.travis config/database.yml
     - psql -c "CREATE DATABASE HouseNow;" -U postgres
     - psql -c "ALTER USER postgres WITH PASSWORD 'kpi2015';" -U postgres
+    - sudo /etc/init.d/postgresql stop
+    - sudo /etc/init.d/postgresql start
    
 
 script:
