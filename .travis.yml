@@ -20,8 +20,8 @@ before_script:
     - export GRADLE_HOME=$PWD/gradle-4.5-rc-1
     - export PATH=$GRADLE_HOME/bin:$PATH
     - mkdir config && cp database.yml.travis config/database.yml
-    - psql -c "CREATE DATABASE $DB_NAME;" -U $DB_USERNAME
-    - psql -c "ALTER USER $DB_USERNAME WITH PASSWORD '$DB_PASSWORD';" -U $DB_USERNAME
+    - psql -c "CREATE DATABASE HouseNow;" -U postgres
+    - psql -c "ALTER USER postgres WITH PASSWORD 'kpi2015';" -U postgres
 
 script:
 - ./gradlew assemble
