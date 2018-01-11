@@ -41,7 +41,6 @@ dependencies {
 	compile('org.springframework.data:spring-data-releasetrain')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')			
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile('log4j:log4j')	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
 	compileOnly('org.projectlombok:lombok')
@@ -51,6 +50,7 @@ dependencies {
 	compile(group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2.9')
 	compile(group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22')
 	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
+	compile('org.springframework.boot:spring-boot-configuration-processor')
 
 
 }
@@ -60,7 +60,7 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'ConsoleInterface'
+                'Main-Class': 'HouseNowApplication'
         )
     }
 }

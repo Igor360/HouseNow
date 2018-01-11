@@ -1,6 +1,8 @@
 package com.igordavidenko.HouseNow.Service;
 
 
+import java.util.List;
+
 import com.igordavidenko.HouseNow.Models.Floors;
 import com.igordavidenko.HouseNow.Models.Houses;
 
@@ -11,4 +13,5 @@ public interface HouseService {
 	public void saveHouse(Houses house);
 	public Houses findHouseByFloor(Floors floor);
 	public void deleteHouse(Houses house);
+	public List<Houses> findAll();
 }
