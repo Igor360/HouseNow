@@ -1,4 +1,4 @@
-postgresql: &postgresql
+postgresql: postgresql
 adapter: postgresql
 username: $DB_USENAME
 password: $DB_PASSWORD
