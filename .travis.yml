@@ -8,7 +8,9 @@ jdk:
 
 services:
   - postgresql
-
+addons:
+  postgresql: "9.6"
+  
 before_install:
 - gradle wrapper
 - sudo apt-get install jq
@@ -20,8 +22,10 @@ before_script:
     - export GRADLE_HOME=$PWD/gradle-4.5-rc-1
     - export PATH=$GRADLE_HOME/bin:$PATH
     - mkdir config && cp database.yml.travis config/database.yml
+    - psql -h localhost -p 5433
     - psql -c "CREATE DATABASE HouseNow;" -U postgres
     - psql -c "ALTER USER postgres WITH PASSWORD 'kpi2015';" -U postgres
+   
 
 script:
 - ./gradlew assemble
