@@ -24,7 +24,6 @@ before_script:
     - mkdir config && cp database.yml.travis config/database.yml
     - psql -c "CREATE DATABASE HouseNow;" -U postgres
     - psql -c "CREATE USER test_user WITH password 'kpi2015';" -U postgres
-    - psql -h localhost -p 5433 NouseNow test_user
     - sudo /etc/init.d/postgresql stop
     - sudo /etc/init.d/postgresql start
    
