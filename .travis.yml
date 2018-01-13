@@ -9,7 +9,7 @@ jdk:
 services:
   - postgresql
 addons:
-  postgresql: "10.1"
+  postgresql: "9.6"
   
 before_install:
 - gradle wrapper
