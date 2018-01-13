@@ -40,11 +40,11 @@ public class HousesTest {
 		house.setAddress("UA");
 		
 		HouseTypes type = new HouseTypes();
-		type.setName("House");
+		type.setName("House1");
 		type.setDescription("only house");
 		houseTypeService.save(type);
 		
-		Users user = new Users("user","12344", "email@email.com", "ivan", "ivanov");
+		Users user = new Users("user1","12344", "email@email1.com", "ivan", "ivanov");
 		userService.saveUser(user);
 		
 		Users userSaved = userService.findUserById(1L);

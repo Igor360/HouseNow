@@ -79,6 +79,9 @@ public class HouseFloorTest {
 	public void test() {
 		Assert.assertEquals("floor1", floorService.findFloorById(1L).getName());
 		Assert.assertEquals("room", roomService.findRoomById(1L).getName());
+		//houseService.deleteHouse(houseService.findHouseById(1L));
+		//houseTypeService.delete(houseTypeService.findTypeById(1L));
+		//userService.deleteUser(userService.findUserById(1L));
 		roomService.deleteRoom(roomService.findRoomById(1L));
 		floorService.deleteFloor(floorService.findFloorById(1L));
 		Assert.assertEquals(floorService.findFloorById(1L), null);
