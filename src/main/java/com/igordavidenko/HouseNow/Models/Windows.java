@@ -31,7 +31,7 @@ public class Windows {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	@NotNull(message = "*Введіть назву вікна")
 	@Column(name = "name")

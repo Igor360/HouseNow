@@ -10,4 +10,5 @@ public interface SensorsService {
 	public List<Sensors> findSensorByType(SensorType type);
 	public List<Sensors> findAll();
 	public void deleteSensor(Sensors sensor);
+	public Sensors findSensorById (Long id);
  }

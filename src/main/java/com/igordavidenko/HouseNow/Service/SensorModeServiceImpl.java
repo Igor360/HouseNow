@@ -22,4 +22,9 @@ public class SensorModeServiceImpl implements SensorModeService{
 		sensorModeRepository.delete(sensorMode);
 	}
 	
+	
+	@Override
+	public SensorMode findModeById(Long id) {
+		return sensorModeRepository.findOne(id);
+	}
 }

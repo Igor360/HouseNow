@@ -34,4 +34,9 @@ public class SensorServiceImpl implements SensorsService{
 	public void deleteSensor(Sensors sensor) {
 		sensorRepository.delete(sensor);
 	}
+	
+	@Override
+	public Sensors findSensorById(Long id) {
+		return sensorRepository.findOne(id);
+	}
 }

@@ -6,4 +6,5 @@ public interface SensorStatusService {
 
 		public void saveSensorStatus(SensorStatus sensor);
 		public void deleteSensorStatus(SensorStatus sensor);
+		public SensorStatus findStatusById(Long id);
 }

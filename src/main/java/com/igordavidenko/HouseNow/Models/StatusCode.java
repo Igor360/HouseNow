@@ -27,7 +27,7 @@ public class StatusCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id; 
+	private Long id; 
 	
 	@NotNull(message = "*Введіть назву коду")
 	@Column(name = "name", unique = true)

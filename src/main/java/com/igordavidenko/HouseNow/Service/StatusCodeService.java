@@ -6,4 +6,5 @@ public interface StatusCodeService {
 
 	 public void saveStatusCode(StatusCode statusCode);
 	 public void deleteStatusCode(StatusCode statusCode);
+	 public StatusCode findCodeById(Long id);
 }

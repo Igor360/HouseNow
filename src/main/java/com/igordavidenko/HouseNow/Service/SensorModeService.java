@@ -6,4 +6,5 @@ public interface SensorModeService {
 	
 	public void saveSensorMode(SensorMode sensorMode);
 	public void deleteSensorMode(SensorMode sensorMode);
+	public SensorMode findModeById (Long id);
 }

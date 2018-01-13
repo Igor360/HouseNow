@@ -22,4 +22,8 @@ public class SensorStatusServiceImplmpl implements SensorStatusService{
 		sensorStatusRepository.delete(sensorStatus);
 	}
 	
+	@Override
+	public SensorStatus findStatusById(Long id) {
+		return sensorStatusRepository.findOne(id);
+	}
 }

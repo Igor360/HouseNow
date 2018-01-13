@@ -31,7 +31,7 @@ public class SensorStatus {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	@NotNull(message = "*Введіть назву статуса сенсора")
 	@Column(name = "name", unique = true)

@@ -23,6 +23,11 @@ public class StatusCodeServiceImpl implements StatusCodeService{
 		statusCodeRepository.delete(statusCode);
 	}
 	
+	@Override
+	public StatusCode findCodeById(Long id) {
+		return statusCodeRepository.findOne(id);
+	}
+	
 	
 
 }
