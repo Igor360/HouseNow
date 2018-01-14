@@ -1,5 +1,5 @@
 postgresql: postgresql
 adapter: postgresql
-username: $DB_USENAME
-password: $DB_PASSWORD
-database: $DB_NAME
+username: test_user
+password: kpi2015
+database: HouseNow
