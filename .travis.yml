@@ -37,7 +37,7 @@ before_script:
     - sudo /etc/init.d/postgresql restart
     - psql -U postgres -c 'CREATE DATABASE HouseNow;'
     - psql -c "CREATE USER test_user WITH PASSWORD 'kpi2015';" -U postgres 
-    - psql -h loacalhost -p 5432 HouseNow
+    - psql -h localhost -p 5432 HouseNow
 
 
 script:
