@@ -25,9 +25,10 @@ addons:
 before_script:
   - sudo cp /etc/postgresql/9.4/main/pg_hba.conf /etc/postgresql/9.6/main/pg_hba.conf
   - sudo /etc/init.d/postgresql restart
-  - mkdir config && cp database.yml.travis config/database.yml
   - psql -c "CREATE DATABASE HouseNow;" -U postgres   
   - psql -c "CREATE USER "test_user" WITH PASSWORD 'kpi2015';" -U postgres 
+  - mkdir config && cp database.yml.travis config/database.yml
+
   
 before_install:
 - gradle wrapper
