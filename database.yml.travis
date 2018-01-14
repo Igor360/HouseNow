@@ -1,5 +1,3 @@
-postgresql: postgresql
-adapter: postgresql
-username: test_user
-password: kpi2015
-database: HouseNow
+test:
+  adapter: postgresql
+  database: HouseNow
