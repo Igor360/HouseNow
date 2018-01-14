@@ -35,10 +35,9 @@ before_script:
     - export PATH=$GRADLE_HOME/bin:$PATH
     - sudo cp /etc/postgresql/9.4/main/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
     - sudo /etc/init.d/postgresql restart
-    - psql -c "CREATE DATABASE HouseNow;" -U postgres   
+    - psql -U postgres -c 'CREATE DATABASE HouseNow;'
     - psql -c "CREATE USER test_user WITH PASSWORD 'kpi2015';" -U postgres 
-    - mkdir config && cp database.yml.travis config/database.yml
-    -  psql -h localhost -p 5432 HouseNow -U postgres
+
 
 
 script:
