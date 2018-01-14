@@ -16,11 +16,11 @@ services:
 addons:
   apt:
     sources:
-    - precise-pgdg-9.6
+    - precise-pgdg-9.5
     packages:
-    - postgresql-9.6
-    - postgresql-contrib-9.6
-  postgresql: 9.6
+    - postgresql-9.5
+    - postgresql-contrib-9.5
+  postgresql: 9.5
   
   
 before_install:
@@ -33,7 +33,7 @@ before_script:
     - unzip gradle-4.5-rc-1-bin.zip
     - export GRADLE_HOME=$PWD/gradle-4.5-rc-1
     - export PATH=$GRADLE_HOME/bin:$PATH
-    - sudo cp /etc/postgresql/9.4/main/pg_hba.conf /etc/postgresql/9.6/main/pg_hba.conf
+    - sudo cp /etc/postgresql/9.4/main/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
     - sudo /etc/init.d/postgresql restart
     - psql -c "CREATE DATABASE HouseNow;" -U postgres   
     - psql -c "CREATE USER test_user WITH PASSWORD 'kpi2015';" -U postgres 
