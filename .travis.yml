@@ -22,9 +22,9 @@ before_script:
     - export GRADLE_HOME=$PWD/gradle-4.5-rc-1
     - export PATH=$GRADLE_HOME/bin:$PATH
     - mkdir config && cp database.yml.travis config/database.yml
-    - psql -c "CREATE DATABASE HouseNow;" -U postgres
+    - psql -c "CREATE DATABASE 'HouseNow';" -U postgres
     - psql -c "CREATE USER test_user WITH password 'kpi2015';" -U postgres
-
+    - psql -c "grant all privileges on database 'HouseNow' to 'test_user';" -U postgres
 
 script:
 - ./gradlew assemble
