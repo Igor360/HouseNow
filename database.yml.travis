@@ -1,5 +1,5 @@
 postgresql: &postgresql
 adapter: postgresql
-username: postgres
-password: postgres
+username: test_user
+password: kpi2015
 database: HouseNow
