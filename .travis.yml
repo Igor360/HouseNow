@@ -38,7 +38,7 @@ before_script:
     - psql -c "CREATE DATABASE HouseNow;" -U postgres   
     - psql -c "CREATE USER test_user WITH PASSWORD 'kpi2015';" -U postgres 
     - mkdir config && cp database.yml.travis config/database.yml
-    -  psql -h localhost -p 5432 -U postgres -W HouseNow
+    -  psql -h localhost -p 5432  -W HouseNow
 
 
 script:
