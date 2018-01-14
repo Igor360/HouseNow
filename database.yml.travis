@@ -1,3 +1,5 @@
-test:
-  adapter: postgresql
-  database: HouseNow
+postgresql: &postgresql
+adapter: postgresql
+username: postgres
+password: postgres
+database: HouseNow
