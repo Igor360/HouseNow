@@ -29,6 +29,7 @@ before_script:
 script:
 - ./gradlew assemble
 - ./gradlew check
+- ./gradlew test --info
 - ./gradlew codeCoverageReport
 - ./gradlew jacocoTestReport
 
